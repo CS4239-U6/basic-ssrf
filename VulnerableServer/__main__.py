@@ -16,7 +16,7 @@ def index():
         return render_template('index.html', error='Invalid form submission')
 
     url = request.form['url']
-    temp_name = os.path.join('temp', f'temp-{uuid4()}.pdf')
+    temp_name = os.path.join(os.path.dirname(__file__), f'temp', f'temp-{uuid4()}.pdf')
 
     try:
         pdfkit.from_url(url, temp_name)
