@@ -22,3 +22,7 @@ A Basic example of an SSRF vulnerability
 1. Enter `http://localhost:5001` directly
    1. Unable to access the website
 2. Enter `http://localhost:5001` in `http://localhost:5000` and the server will visit the webpage and fetch what is on the webpage
+
+
+# Defenses
+1. A whitelist of allowed websites
