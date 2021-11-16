@@ -24,7 +24,7 @@ Make sure you have Docker installed locally before doing the following:
 ## Vulnerability
 
 1. Enter `http://localhost:5001` directly. You will see that you are unable to access the website.
-1. Enter `http://localhost:5001` in `http://localhost:5000` and the server will visit the webpage and fetch what is on the webpage
+1. Enter `http://localhost:5001` in `http://localhost:5000` and the server will visit the webpage and fetch what is on the webpage.
 
 ## Defenses
 
@@ -34,7 +34,7 @@ An allowlist of allowed websites can be put in place in order to narrow the scop
 This can be both in the sense of the URL schemas or even the URLs themselves.
 However, with many websites, the allowlist can accumulate and before very long.
 
-Code addition:
+Example of code that can be added:
 
 ```python
 ALLOWLIST = ('http://www.google.com',)
@@ -57,7 +57,10 @@ A denylist of websites that are not allowed. The opposite of an allowlist.
 This can be both in the sense of the URL schemas or even the URLs themselves.
 Note that in this case it is very easy to miss out a website and this will result in a possible SSRF attack on the website itself.
 
-It may also be avoided when the user changes the representation. For example, `localhost:3000` == `127.0.0.1:3000` == `127.1:3000`
+It may also be avoided when the user changes the representation.
+For example, `localhost:3000` == `127.0.0.1:3000` == `127.1:3000`
+
+Example of code that can be added:
 
 ```python
 DENYLIST = ("127.0.0.1",)
@@ -78,7 +81,10 @@ if ip in DENYLIST:
 The input URLs can be filtered and check if it points to any internal service before they are are passed to the PDF downloader.
 This can be both in the sense of the URL schemas or even the URLs themselves.
 
-Input sanitisation may contain loopholes it if makes use of replacements. For example, if we replace all `../` with `/`, `....//` -> `../`, the attacker is still able to do `../`.
+Input sanitisation may contain loopholes it if makes use of replacements.
+For example, if we replace all `../` with `/`, `....//` -> `../`, the attacker is still able to do `../`.
+
+Example of code that can be added:
 
 ```python
 from urllib.parse import quote
@@ -93,6 +99,7 @@ sanitized_url = quote(url, safe='/:?&')
 
 ### Enable authentication on all servers
 
-When the vulnerable server makes a request to the hidden local server, the vulnerable server will need to authenticate. Without the authentication details, the malicious user is unable to access any information.
+When the vulnerable server makes a request to the hidden local server, the vulnerable server will need to authenticate.
+Without the authentication details, the malicious user is unable to access any information.
 
 This is to be implemented on all other servers including the vulnerable server.
