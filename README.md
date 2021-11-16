@@ -15,6 +15,9 @@ A basic example of an SSRF vulnerability.
 ## Run using Docker
 
 If you do not wish to set up the Python and `wkhtmltopdf` dependencies above, an easier way to get started is using Docker.
+
+> Note: The Dockerfile may not work on a M1 Mac due to the architecture differences, which affects the `wkhtmltopdf` installation.
+
 Make sure you have Docker installed locally before doing the following:
 
 1. Build the file with `docker build -t basic-ssrf .`.
