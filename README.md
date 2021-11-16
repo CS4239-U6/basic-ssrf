@@ -14,8 +14,11 @@ A basic example of an SSRF vulnerability.
 
 ## Run using Docker
 
+If you do not wish to set up the Python and `wkhtmltopdf` dependencies above, an easier way to get started is using Docker.
+Make sure you have Docker installed locally before doing the following:
+
 1. Build the file with `docker build -t basic-ssrf .`.
-1. Run the dockerfile with `docker run -dt -p 5000:5000 basic-ssrf`.
+1. Run the Dockerfile with `docker run -dt -p 5000:5000 basic-ssrf`.
 1. Visit `http://localhost:5000` to see the website.
 
 ## Vulnerability
