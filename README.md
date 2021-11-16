@@ -1,6 +1,6 @@
 # Basic SSRF
 
-A basic example of an SSRF vulnerability.
+A basic example of a SSRF vulnerability.
 
 ## Run using Python
 
