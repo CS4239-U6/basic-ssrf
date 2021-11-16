@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 # Install update.
 RUN apt-get update && apt-get install -y \
-    wget\
+    wget \
     python3 \
     python3-pip
 
