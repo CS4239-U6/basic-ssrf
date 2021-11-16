@@ -5,10 +5,11 @@ A basic example of an SSRF vulnerability.
 ## Run using Python
 
 1. Clone the repo with `git clone https://github.com/CS4239-U6/blind-ssrf.git`.
-1. Go into the folder with `cd basic-ssrf`
-1. Install the requirements with `pip3 install -r requirements.txt`
-1. Run `python ./HiddenLocalServer/__main__.py` to run the hidden local server.
-1. Run `python ./VulnerableServer/__main__.py` to run the web facing server.
+1. Go into the folder with `cd basic-ssrf`.
+1. Install the requirements with `pip3 install -r requirements.txt`.
+1. Install `wkhtmltopdf` using instructions from <https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf>.
+1. Run `python3 ./HiddenLocalServer/__main__.py` to run the hidden local server.
+1. Run `python3 ./VulnerableServer/__main__.py` to run the web facing server.
 1. Visit `http://localhost:5000` to see the website.
 
 ## Run using Docker
