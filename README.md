@@ -23,7 +23,7 @@ Make sure you have Docker installed locally before doing the following:
 
 ## Vulnerability
 
-1. Enter `http://localhost:5001` directly. You will see that you are unable to access the website.
+1. (If running on Docker) Enter `http://localhost:5001` directly. You will see that you are unable to access the website.
 1. Enter `http://localhost:5001` in `http://localhost:5000` and the server will visit the webpage and fetch what is on the webpage.
 
 ## Defenses
